@@ -7,7 +7,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
-import { Heart, MapPin, Calendar, Eye, MessageCircle, ArrowLeft, User } from 'lucide-react';
+import { Heart, MapPin, Calendar, Eye, MessageCircle, ArrowLeft, User, Edit } from 'lucide-react';
 import { useNavigate, useParams } from 'react-router-dom';
 
 const AdoptionDetail = () => {
@@ -44,7 +44,7 @@ const AdoptionDetail = () => {
     age: "2개월",
     gender: "수컷",
     breed: "골든리트리버",
-    price: "50만원",
+    price: "책임비 50만원",
     vaccination: "1차 완료",
     neutering: "미완료",
     date: "2024.06.20",
@@ -186,7 +186,7 @@ const AdoptionDetail = () => {
                         <p className="font-medium">{post.neutering}</p>
                       </div>
                       <div>
-                        <span className="text-sm text-gray-600">분양비</span>
+                        <span className="text-sm text-gray-600">책임비</span>
                         <p className="font-medium text-orange-600">{post.price}</p>
                       </div>
                     </div>
@@ -199,6 +199,14 @@ const AdoptionDetail = () => {
                   <div className="prose max-w-none text-gray-700 leading-relaxed">
                     {post.description}
                   </div>
+                </div>
+
+                {/* 게시물 수정 버튼 */}
+                <div className="mb-8 text-center">
+                  <Button variant="outline" className="mr-4">
+                    <Edit className="h-4 w-4 mr-2" />
+                    게시물 수정
+                  </Button>
                 </div>
 
                 {/* 댓글 섹션 */}

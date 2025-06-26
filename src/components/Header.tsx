@@ -10,7 +10,6 @@ import { useNavigate } from 'react-router-dom';
 const Header = () => {
   const navigate = useNavigate();
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [loginData, setLoginData] = useState({ email: '', password: '' });
   const [currentUser, setCurrentUser] = useState(null);
 
   const categories = [
@@ -66,7 +65,7 @@ const Header = () => {
                     <span>{category.name}</span>
                     <ChevronDown className="h-4 w-4" />
                   </DropdownMenuTrigger>
-                  <DropdownMenuContent className="bg-white border border-orange-200 shadow-lg">
+                  <DropdownMenuContent className="bg-white border border-orange-200 shadow-lg z-50">
                     {category.submenu.map((subItem) => (
                       <DropdownMenuItem key={subItem.name}>
                         <a href={subItem.href} className="text-gray-700 hover:text-orange-500">
@@ -99,7 +98,7 @@ const Header = () => {
                   </div>
                   <span className="font-medium">{currentUser?.name}</span>
                 </DropdownMenuTrigger>
-                <DropdownMenuContent className="bg-white border border-orange-200 shadow-lg">
+                <DropdownMenuContent className="bg-white border border-orange-200 shadow-lg z-50">
                   <DropdownMenuItem onClick={handleLogout} className="text-gray-700 hover:text-orange-500">
                     <LogOut className="h-4 w-4 mr-2" />
                     로그아웃
@@ -125,7 +124,7 @@ const Header = () => {
               </button>
             </SheetTrigger>
             <SheetContent side="right" className="w-80">
-              <MobileSidebar onLogin={handleLogin} isLoggedIn={isLoggedIn} currentUser={currentUser} onLogout={handleLogout} />
+              <MobileSidebar />
             </SheetContent>
           </Sheet>
         </div>
