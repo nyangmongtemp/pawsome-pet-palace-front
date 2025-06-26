@@ -90,7 +90,7 @@ const AdoptionDetail = () => {
                   </Button>
                   <div className="flex items-center space-x-2 text-sm text-gray-600">
                     <span>분양게시판</span>
-                    <span>></span>
+                    <span>{'>'}</span>
                     <span>{post.title}</span>
                   </div>
                 </div>

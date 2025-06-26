@@ -59,7 +59,7 @@ const RescueDetail = () => {
                   </Button>
                   <div className="flex items-center space-x-2 text-sm text-gray-600">
                     <span>유기동물분양게시판</span>
-                    <span>></span>
+                    <span>{'>'}</span>
                     <span>{post.title}</span>
                   </div>
                 </div>
